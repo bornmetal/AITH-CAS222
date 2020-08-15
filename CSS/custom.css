@@ -1,1 +1,129 @@
+/* header,button,section info are parametric mixins. This file was a .less file compiled online at winless.com */
+.header {
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+.button {
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+.section info {
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
 
+}
+/* Mobile first queries */
+/* applies to ALL widths */
+.weatherBox {
+    padding: 5px;
+}
+.author {
+    grid-row: 3;
+    grid-column: -1;
+}
+.weatherBox > div > div,
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2F4F4F;
+}
+p {
+    text-align: center;
+}
+#userInput,
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.item {
+    background: #FFFAFA;
+    padding-bottom: 20px;
+}
+.search,
+.temp-item,
+.weather {
+    padding-bottom: 20px;
+}
+.temp {
+    padding-bottom: 10px;
+}
+.loader {
+    border: 7px solid #f3f3f3;
+    /* Light grey */
+    border-top: 7px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    animation: spin 2s linear infinite;
+    margin-left: 40%;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+h1 {
+    color: red ;
+}
+h2 {
+    color: red;
+}
+.header {
+    padding: 40px 0 60px 0;
+    background-image: url("../imgs/header.jpg");
+    background-size: cover;
+}
+.logo {
+    font-weight: 700;
+    color: #ffd18f;
+    background-color: #222222;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-left: 2px;
+    z-index: 100;
+}
+.nav {
+    text-align: center;
+}
+.nav .button {
+    width: 20%;
+    margin: 3px 0;
+}
+.button {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.action {
+    text-align: center;
+    padding-top: 65px;
+}
+.action h1 {
+    margin: 0;
+}
+.action h2 {
+    margin: 0 0 18px 0;
+}
+/* Larger than mobile */
+/* applies to all widths 400px and greater */
+/* Larger than phablet */
+/* applies to all widths 550px and greater */
+/* Larger than tablet */
+/* applies to all widths 750px and greater */
+/* Larger than desktop */
+/* applies to all widths 100px and greater */
+/* Larger than Desktop HD */
+/* applies to 1200px and greater */
