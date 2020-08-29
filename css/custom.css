@@ -23,7 +23,7 @@
      color: black;
 }
 h1 {
-    color: red;
+    color: white;
 }
 h2 {
     color: red;
@@ -105,149 +105,76 @@ nav a:hover {
 }
 
 
-/* Larger than mobile */
-/* applies to all widths 400px and greater */
-/* Larger than phablet */
-54
-    transition: .3s all ease-in-out;
-55
+/*image gallerry styling */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 5vw);
+    grid-gap: 15px;
 }
-56
-​
-57
-nav a:hover {
-58
-    opacity: .7;
-59
+.container {
+    width: 60%;
+    margin: 2rem auto;
 }
-60
-​
-61
-.left-menu {
-62
-    grid-column: 1;
-63
-    align-self: center;
-64
-}
-65
-​
-66
-​
-67
-.left-menu a {
-68
-    padding: 10px 0;
-69
-    margin-left: 15px;
-70
-    font-size: 14px;
-71
-    font-weight: 300;
-72
-    letter-spacing: 0.5px;
-73
-}
-74
-​
-75
-.burger-menu {
-76
-    grid-column: 1;
-77
-    align-self: center;
-78
-    margin-left: 20px;
-79
-}
-80
-​
-81
-​
-82
-.logo {
-83
-    grid-column: 2;
-84
-    font-size: 40px;
-85
-    padding: 1rem;
-86
-}
-87
-.button {
-88
-    background-color: rgba(255, 255, 255, 0.5);
-89
-}
-90
-.button:hover {
-91
-    background-color: rgba(255, 255, 255, 0.3);
-92
-}
-93
-.action {
-94
-    text-align: center;
-95
-    padding-top: 65px;
-96
-}
-97
-.action h1 {
-98
-    margin: 0;
-99
-}
-100
-.action h2 {
-101
-    margin: 0 0 18px 0;
-102
-}
-103
-#nav-toggle, .burger-menu {
-104
-    display: none;
-105
-}
-106
-​
-107
-​
-108
-/* Larger than mobile */
-109
-/* applies to all widths 400px and greater */
-110
-/* Larger than phablet */
-111
-/* applies to all widths 550px and greater */
-112
-/* Larger than tablet */
-113
-/* applies to all widths 750px and greater */
-114
-​
-115
-​
-116
-@media only screen and (max-width: 950px) {
-117
-    .burger-menu {
-118
-        display: inline-block;
-119
-    }
-120
-​
-121
-    .left-menu {
 
-/* applies to all widths 550px and greater */
-/* Larger than tablet */
-/* applies to all widths 750px and greater */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 5vw);
+    grid-gap: 1.5rem;
+}
+
+.gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.gallery__item--1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.gallery__item--2 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+
+.gallery__item--3 {
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 6;
+}
+
+
+.gallery__item--4 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 6;
+}
+
+.gallery__item--5 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 9;
+}
+
+.gallery__item--6 {
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 6;
+    grid-row-end: 9;
+}
 
 
 @media only screen and (max-width: 950px) {
@@ -267,8 +194,3 @@ nav a:hover {
 
 
 
-
-/* Larger than desktop */
-/* applies to all widths 1000px and greater */
-/* Larger than Desktop HD */
-/* applies to 1200px and greater */
