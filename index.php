@@ -1,85 +1,87 @@
+<?php
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Ace In The Hole Multi-sports</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Karma:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/skeleton.css">
-    <link rel="stylesheet" href="css/custom.css">
-</head>
-<body>
+// Edit or Replace this try/catch statement to work with the current PHT configuration
+try
+{
+    $pdo = new PDO('mysql:host=localhost;dbname=mobixclu_pdxhisttours', 'mobixclu_pdxhisttours', '30622962Rip!');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->exec('SET NAMES "utf8"');
+}
+catch (PDOException $e)
+{
+    $error = 'Unable to connect to the database server.';
+    include '../includes/error.html.php';
+    exit();
+}
 
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="1shVGe2r"></script>
-
-
-<!-- top section -->
-<div class="section header">
-    <div class="container">
-        <div class="row">
-            <div class="nav-container">
-                <nav>
-                    <input type="checkbox" id="nav-toggle">
-                    <label for="nav-toggle" class="burger-menu">
-                        <img src="imgs/menu.jpg" alt="menu" width="80" height="80">
-                    </label>
-                    <div class="left-menu">
-                        <a href="index.php">Home</a>
-                        <a href="forms/reservations.html.php">Events</a>
-                        <a href="#">About</a>
-                        <a href="#">multimedia</a>
-                    </div>
-                    <a href="index.php" class="logo">Ace In The Hole Multi-sports</a>
-                </nav>
-            </div>
+// Modify the If statement so the try only runs if the First Name field has been submitted AND the honeypot field is empty ''
+//If a field in the form has a value and the Honeypot field is blank, then write the data to the database
+if ((isset($_POST['myfname']))) {
 
 
+    //Save the field values for success.html.php page
+    $myrole = $_POST['myrole'];
+    $myfname = $_POST['myfname'];
+    $mylname = $_POST['mylname'];
+    $myage = $_POST['myage'];
+    $myemail = $_POST['myemail'];
+    $myphone = $_POST['myphone'];
+    $myecontactnam = $_POST['myecontactnam'];
+    $myeconphone = $_POST['myeconphone'];
+    $mygender = $_POST['mygender'];
+    $mytshirtsz = $_POST['mytshirtsz'];
+    $mysatevents= $_POST['mysatevents'];
+    $mysunevents = $_POST['mysunevents'];
+    $mycomments = $_POST['mycomments'];
 
 
-        </div>
-        <div class="row action">
-            <h1>Wy Not you?</h1>
-            <h2>Multisports for Everyone</h2>
-            <h2><a href="#" class="button button-primary">Register Today!</a></h2>
-        </div>
-    </div>
-</div>
+    //Insert data to reservations table
+    try {
+        $sql = 'INSERT INTO aith SET
+        myrole = :myrole,
+        myfname = :myfname,
+        mylname = :mylname,
+         myage = :myage,
+        myemail = :myemail,
+    myphone = :myphone,
+    myecontactnam = :myecontactnam,
+    myeconphone = :myeconphone,
+    mygender = :mygender,
+    mytshirtsz = :mytshirtsz,
+    mysatevents= :mysatevents,
+   mysunevents = :mysunevents,
+    mycomments = :mycomments';
+        $s = $pdo->prepare($sql);
+        $s->bindValue(':myrole', $myrole);
+        $s->bindValue(':myfname', $myfname);
+        $s->bindValue(':mylname', $mylname);
+        $s->bindValue(':myage', $myage);
+        $s->bindValue(':myemail', $myemail);
+        $s->bindValue(':myphone', $myphone);
+        $s->bindValue(':myecontactnam', $myecontactnam);
+        $s->bindValue(':myeconphone', $myeconphone);
+        $s->bindValue(':mygender', $mygender);
+        $s->bindValue(':mytshirtsz', $mytshirtsz);
+        $s->bindValue(':mysatevents', $mysatevents);
+        $s->bindValue(':mysunevents', $mysunevents);
+        $s->bindValue(':mycomments', $mycomments);
+        $s->execute();
 
-<!-- info section -->
-<div class="section info">
-    <div class="container info">
-        <div class="row">
-            <h2>We Want You!!</h2>
-        </div>
-        <div class="row">
 
 
-            <div class="eight columns">
-                <p>Mei te possit instructior, idque delenit qui et, dicit ludus commune vix ad. Ea modo dicam cetero mel, case disputationi at est. Ad nam adipisci dignissim posidonium, eius reque temporibus ne mea. Vero antiopam ea vim. Ei timeam electram vix. Eam at tollit erroribus, ea eum idque legere epicuri. Sed quot legere minimum cu, ex mei fastidii mandamus intellegam, error consul ut per.</p>
-                <p><a href="#" class="button button-primary">More info</a></p>
-            </div>
-            <div class="two columns">
-                <h4>Social Media</h4>
-                
-                <div class="fb-comment-embed" data-href="https://www.facebook.com/Cas222Aceinthehole-110661963841617/" data-include-parent="false" data-width="300"></div>
-                
-                </div>
-                
-            </div>
-        </div>
-    </div>
-    <!-- footer -->
-    <div class="section footer">
-        <div class="container">
-            <div class="row">
-                <?php include 'includes/footer.php';?>
-                
-            </div>
-        </div>
-    
-</div>
-</body>
-</html>
+    } catch (PDOException $e) {
+
+
+
+        $error = 'Error fetching submission: ' . $e->getMessage();
+        include '../includes/error.html.php';
+        exit();
+    }
+
+    include 'success.html.php';
+} else {
+    include 'reservations.html.php';
+
+}
+
+?>
