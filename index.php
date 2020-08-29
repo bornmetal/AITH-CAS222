@@ -1,87 +1,93 @@
-<?php
 
-// Edit or Replace this try/catch statement to work with the current PHT configuration
-try
-{
-    $pdo = new PDO('mysql:host=localhost;dbname=mobixclu_pdxhisttours', 'mobixclu_pdxhisttours', '30622962Rip!');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo->exec('SET NAMES "utf8"');
-}
-catch (PDOException $e)
-{
-    $error = 'Unable to connect to the database server.';
-    include '../includes/error.html.php';
-    exit();
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Ace In The Hole Multi-sports</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Karma:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
 
-// Modify the If statement so the try only runs if the First Name field has been submitted AND the honeypot field is empty ''
-//If a field in the form has a value and the Honeypot field is blank, then write the data to the database
-if ((isset($_POST['myfname']))) {
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="1shVGe2r"></script>
 
 
-    //Save the field values for success.html.php page
-    $myrole = $_POST['myrole'];
-    $myfname = $_POST['myfname'];
-    $mylname = $_POST['mylname'];
-    $myage = $_POST['myage'];
-    $myemail = $_POST['myemail'];
-    $myphone = $_POST['myphone'];
-    $myecontactnam = $_POST['myecontactnam'];
-    $myeconphone = $_POST['myeconphone'];
-    $mygender = $_POST['mygender'];
-    $mytshirtsz = $_POST['mytshirtsz'];
-    $mysatevents= $_POST['mysatevents'];
-    $mysunevents = $_POST['mysunevents'];
-    $mycomments = $_POST['mycomments'];
-
-
-    //Insert data to reservations table
-    try {
-        $sql = 'INSERT INTO aith SET
-        myrole = :myrole,
-        myfname = :myfname,
-        mylname = :mylname,
-         myage = :myage,
-        myemail = :myemail,
-    myphone = :myphone,
-    myecontactnam = :myecontactnam,
-    myeconphone = :myeconphone,
-    mygender = :mygender,
-    mytshirtsz = :mytshirtsz,
-    mysatevents= :mysatevents,
-   mysunevents = :mysunevents,
-    mycomments = :mycomments';
-        $s = $pdo->prepare($sql);
-        $s->bindValue(':myrole', $myrole);
-        $s->bindValue(':myfname', $myfname);
-        $s->bindValue(':mylname', $mylname);
-        $s->bindValue(':myage', $myage);
-        $s->bindValue(':myemail', $myemail);
-        $s->bindValue(':myphone', $myphone);
-        $s->bindValue(':myecontactnam', $myecontactnam);
-        $s->bindValue(':myeconphone', $myeconphone);
-        $s->bindValue(':mygender', $mygender);
-        $s->bindValue(':mytshirtsz', $mytshirtsz);
-        $s->bindValue(':mysatevents', $mysatevents);
-        $s->bindValue(':mysunevents', $mysunevents);
-        $s->bindValue(':mycomments', $mycomments);
-        $s->execute();
+<!-- top section -->
+<div class="section header">
+    <div class="container">
+        <div class="row">
+            <div class="nav-container">
+                <nav>
+                    <input type="checkbox" id="nav-toggle">
+                    <label for="nav-toggle" class="burger-menu">
+                        <img src="imgs/menu.jpg" alt="menu" width="80" height="80">
+                    </label>
+                    <div class="left-menu">
+                        <a href="index.php">Home</a>
+                        <a href="forms/">Events</a>
+                        <a href="about/">About</a>
+                        <a href="imggallery/photos.html.php">multimedia</a>
+                        <a href="faq.html.php">FAQ</a>
+                    </div>
+                    <a href="index.php" class="logo">Ace In The Hole Multi-sports</a>
+                </nav>
+            </div>
 
 
 
-    } catch (PDOException $e) {
+
+        </div>
+        <div class="row action">
+            <h1>Why Not you?</h1>
+            <h2>Multisports for Everyone</h2>
+            <h2><a href="forms/" class="button button-primary">Register Today!</a></h2>
+        </div>
+    </div>
+</div>
+
+<!-- info section -->
+<div class="section info">
+    <div class="container info">
+        <div class="row">
+            <h2>Why Not You?!</h2>
+        </div>
+        <div class="row">
 
 
+            <div class="eight columns">
+              <p></p>
+                Ace in the Hole Multisport Events is proud to offer running and triathlon events to athletes of all shapes and sizes, national origins, gender identifications and cultural backgrounds. We offer Events for Every Body.
+<p></p>
+                <h3>ABOUT THE EVENT</h3>
+                The Annual Ace in the Hole Multisport Weekend is a legendary event in the Oregon triathlon and running community. It has become a traditional destination race for athletes from across the nation.
+<p></p>
+                There is something for every level of athletic ability. The weekend includes a first timer triathlon, a sprint, Olympic, and Half-Iron triathlons and 10K and Half marathon runs. Come to experience your first race or come to compete to win, but make sure you come to have fun!
 
-        $error = 'Error fetching submission: ' . $e->getMessage();
-        include '../includes/error.html.php';
-        exit();
-    }
-
-    include 'success.html.php';
-} else {
-    include 'reservations.html.php';
-
-}
-
-?>
+                              <p><a href="about/" class="button button-primary">More info</a></p>
+            </div>
+            <div class="two columns">
+                <h4>Social Media</h4>
+                
+                <div class="fb-comment-embed" data-href="https://www.facebook.com/Cas222Aceinthehole-110661963841617/" data-include-parent="false" data-width="300"></div>
+                
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="section footer">
+        <div class="container">
+            <div class="row">
+                <?php include 'includes/footer.php';?>
+                
+            </div>
+        </div>
+    
+</div>
+</body>
+</html>
