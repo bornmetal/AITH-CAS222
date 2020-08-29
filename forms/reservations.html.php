@@ -25,10 +25,12 @@
                         <img src="../imgs/menu.jpg" alt="menu" width="80" height="80">
                     </label>
                     <div class="left-menu">
-                        <a href="../index.php">Home</a>
-                        <a href="reservations.html.php">Events</a>
-                        <a href="#">About</a>
-                        <a href="#">multimedia</a>
+                       <a href="/Cas222/aith/template/">Home</a>
+                        <a href="forms/">Events</a>
+                        <a href="../about/">About</a>
+                        <a href="../imggallery/photos.html.php">multimedia</a>
+                        <a href="faq.html.php">FAQ</a>
+                        
                     </div>
                     <a href="../index.php" class="logo">Ace In The Hole Multi-sports</a>
                 </nav>
@@ -48,7 +50,7 @@
         <div class="row">
             <h2>We Want You!!</h2>
         </div>
-        <v class="row">
+        <div class="row">
 
 
 
@@ -58,54 +60,62 @@
                 <h1>Book a Reservation</h1>
                 <div id="source">Required fields are marked with an asterisk (*).</div>
                 <div id="reservations">
-                    <form method="post" action="../insert.php">
-                        <label for="myrole">*Role:</label>
+                    <form method="post" action="">
+                       <label for="myrole"></label>
                         <select size="1" name="myrole" id="myrole">
-                            <option>Choose Your Role</option>
+                            <option>*Choose Role</option>
                             <option value="Athlete">Athlete</option>
                             <option value="Volunteer">Volunteer</option>
                         </select>
+<p></p>
                         <label for="myfname">*First Name:</label>
                         <input type="text" name="myfname" id="myfname" required>
+                        <p></p>
                         <label for="mylname">*Last Name:</label>
                         <input type="text" name="mylname" id="mylname" required>
-                        <label for="myage">*Age:</label>
+                        <p></p>
+                        <label for="myage">* Age :</label>
                         <input type="text" name="myage" id="myage" required>
+                        <p></p>
                         <label for="myemail">*Email:</label>
                         <input type="email" name="myemail" id="myemail" required>
-                        <label for="myphone">Phone:</label>
+                        <p></p>
+                        <label for="myphone">*Phone:</label>
                         <input type="tel" name="myphone" id="myphone" required>
-                        <label for="myecontactnam">*Emergency Contact:</label>
+                        <p></p>
+                        <label for="myecontactnam">*Emer Contact:</label>
                         <input type="text" name="myecontactnam" id="myecontactnam" required>
-                        <label for="myeconphone">Emergency Phone:</label>
-                        <input type="tel" name="myeconphone" id="myeconphone">
-                        <label for="mygender">*Gender ID:</label>
+                        <p></p>
+                        <label for="myeconphone">*Emer Phone:</label>
+                        <input type="tel" name="myeconphone" id="myeconphone" required>
+                        <p></p>
+                        <label for="mygender"></label>
                         <select size="1" name="mygender" id="mygender">
-                            <option>Choose Your Gender</option>
+                            <option>*Choose Gender</option>
                             <option value="Female">Female</option>
                             <option value="Male">Male</option>
-                            <option value="Non binary/Other">Non binary/Other</option>
-                        </select>
-                        <label for="mytshirtsz">*t-shirt size:</label>
+                            <option value="Non binary/Other">Non binary/Other</option></select>
+                        <label for="mytshirtsz"></label>
                         <select size="1" name="mytshirtsz" id="mytshirtsz">
-                            <option>Choose Your t-shirt size</option>
+                            <option>Choose Shirt Sz</option>
                             <option value="small">Small</option>
                             <option value="medium">Medium</option>
                             <option value="large">Large</option>
                             <option value="xlarge">X-Large</option></select>
-                        <label for="mysatevents">*Saturday Events</label>
+                        <label for="mysatevents"></label>
                         <select size="1" name="mysatevents" id="mysatevents">
-                            <option>Choose Your Saturday Events</option>
+                            <option>Choose Sat Event</option>
                             <option value="longcourse">Long Course Triathlon</option>
                             <option value="olympic">Olympic Triathlon</option>
                             <option value="tenk">10k</option>
                             <option value="halfm">Half Marathon</option></select>
-                        <label for="mysunevents">*Sunday Events</label>
+                        <label for="mysunevents"></label>
                         <select size="1" name="mysunevents" id="mysunevents">
-                            <option>Choose Your Sunday Events</option>
+                            <option>Choose Sun Event</option>
                             <option value="sprint">Sprint Triathlon</option>
                             <option value="trytri">Try-A-Tri</option>
                             <option value="splash">Splash n Dash</option></select>
+                        <p></p>
                         <label for="mycomments">*Do you have any special Accomodations?</label>
                         <textarea name="mycomments" id="mycomments" rows="2" cols="20" required></textarea>
                         <input id="mysubmit" type="submit" value="Submit">
